@@ -1,3 +1,7 @@
+[![Code Climate](https://codeclimate.com/github/kaspernj/team_viewer/badges/gpa.svg)](https://codeclimate.com/github/kaspernj/team_viewer)
+[![Test Coverage](https://codeclimate.com/github/kaspernj/team_viewer/badges/coverage.svg)](https://codeclimate.com/github/kaspernj/team_viewer)
+[![Gem Version](https://badge.fury.io/rb/team_viewer.svg)](http://badge.fury.io/rb/team_viewer)
+
 # TeamViewer
 
 TeamViewer API for Ruby.
