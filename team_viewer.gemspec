@@ -29,7 +29,8 @@ Gem::Specification.new do |s|
     "VERSION",
     "lib/team_viewer.rb",
     "spec/spec_helper.rb",
-    "spec/team_viewer_spec.rb"
+    "spec/team_viewer_spec.rb",
+    "team_viewer.gemspec"
   ]
   s.homepage = "http://github.com/kaspernj/team_viewer"
   s.licenses = ["MIT"]
