@@ -1,3 +1,6 @@
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
 require 'simplecov'
 
 module SimpleCov::Configuration
@@ -25,5 +28,4 @@ require 'team_viewer'
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 RSpec.configure do |config|
-
 end
