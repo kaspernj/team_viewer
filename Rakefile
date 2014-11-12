@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "team_viewer"
   gem.homepage = "http://github.com/kaspernj/team_viewer"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{TeamViewer API for Ruby}
+  gem.description = %Q{TeamViewer API for Ruby}
   gem.email = "k@spernj.org"
   gem.authors = ["kaspernj"]
   # dependencies defined in Gemfile
