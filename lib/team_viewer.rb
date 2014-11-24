@@ -2,26 +2,24 @@ module TeamViewer
   class Connector
     attr_reader :client
 
-    def initialize
+    def initialize(args)
+      @args = args
       @client = connection(credentials)
     end
 
     def credentials
-      # should be loaded from yml or something else
-      hash = {}
-      hash[:base_url] = 'https://webapi.teamviewer.com'
-      hash[:client_id] = '16787-ea8X6tmNYc8HxP0FMsni'
-      hash[:client_secret] = 'RqlaiDkVNoZR6vJuTDnB'
-      hash
+      {
+        base_url: 'https://webapi.teamviewer.com',
+        client_id: @args[:client_id],
+        client_secret: @args[:client_secret]
+      }
     end
 
     def connection(credentials)
-      OAuth2::Client.new(
-          credentials[:client_id],
-          credentials[:client_secret],
-          :site => credentials[:base_url],
-          :authorize_url => '/api/v1/oauth2/authorize',
-          :token_url => '/api/v1/oauth2/token'
+      OAuth2::Client.new(credentials[:client_id], credentials[:client_secret],
+        site: credentials[:base_url],
+        authorize_url: '/api/v1/oauth2/authorize',
+        token_url: '/api/v1/oauth2/token'
       )
     end
   end
@@ -85,7 +83,7 @@ module TeamViewer
       get "sessions/#{code}"
     end
 
-    def session_update(code)
+    def session_update(code, data)
       put "sessions/#{code}", data
     end
 
@@ -142,17 +140,17 @@ module TeamViewer
     end
 
     def get(resource, params = nil)
-      response = @access_token.get( full_path(resource), :params => params )
+      response = @access_token.get(full_path(resource), params: params)
       response.parsed
     end
 
     def post(resource, data)
-      response = @access_token.post( full_path(resource), { body: data } )
+      response = @access_token.post(full_path(resource), body: data)
       response.status == 200 ? response.parsed : response.status
     end
 
     def put(resource, data)
-      response = @access_token.put( full_path(resource), { body: data } )
+      response = @access_token.put(full_path(resource), body: data)
       response.status
     end
 
