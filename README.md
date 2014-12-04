@@ -36,8 +36,26 @@ response = team_viewer.session_add(
 )
 ```
 
+### Ping
+
+```ruby
+team_viewer.ping
+```
+
+### Get list of users
+
+```ruby
+team_viewer.users
+```
+
+### Add user
+
+```ruby
+team_viewer.user_add(data)
+```
+
 ## Contributing to TeamViewer
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
 * Fork the project.
